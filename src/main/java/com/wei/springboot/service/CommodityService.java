@@ -70,6 +70,7 @@ public class CommodityService {
         Request request = new Request();
         request.code = code;
         CompletableFuture<Map<String, Object>> future = new CompletableFuture<>();
+        request.future = future;
         queue.add(request);
         return future.get();
       //  return queryServiceRemoteCall.queryCommodityByCode(code);
